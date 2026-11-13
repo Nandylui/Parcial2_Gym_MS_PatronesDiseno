@@ -1,0 +1,20 @@
+# Clases compiladas (VS Code y Eclipse)
+out/
+bin/
+
+# Frontend
+node_modules/
+dist/
+
+# Respaldos de BD (contienen datos y contrasenas)
+respaldos/
+respaldos_antes_de_limpiar/
+
+# Proyecto Eclipse vacio que solo duplica a los 5 reales
+Backend/.project
+
+# Comprimidos y archivos del sistema
+*.rar
+*.zip
+.DS_Store
+Thumbs.db

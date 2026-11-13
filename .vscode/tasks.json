@@ -1,0 +1,67 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Compilar Usuario",
+      "type": "process",
+      "command": "javac",
+      "args": [
+        "-encoding", "UTF-8",
+        "-cp", "${workspaceFolder}/lib/gson-2.11.0.jar;${workspaceFolder}/lib/postgresql-42.7.13.jar",
+        "-sourcepath", "${workspaceFolder}/Backend/MS USUARIO/src",
+        "-d", "${workspaceFolder}/out/usuario",
+        "${workspaceFolder}/Backend/MS USUARIO/src/com/gimnasio/usuario/negocio/UsuarioServer.java"
+      ],
+      "problemMatcher": "$javac",
+      "group": "build"
+    },
+    {
+      "label": "Compilar Rutina",
+      "type": "process",
+      "command": "javac",
+      "args": [
+        "-encoding", "UTF-8",
+        "-cp", "${workspaceFolder}/lib/gson-2.11.0.jar;${workspaceFolder}/lib/postgresql-42.7.13.jar",
+        "-sourcepath", "${workspaceFolder}/Backend/MS RUTINA/src",
+        "-d", "${workspaceFolder}/out/rutina",
+        "${workspaceFolder}/Backend/MS RUTINA/src/com/gimnasio/rutina/negocio/RutinaServer.java"
+      ],
+      "problemMatcher": "$javac",
+      "group": "build"
+    },
+    {
+      "label": "Compilar Entrenamiento",
+      "type": "process",
+      "command": "javac",
+      "args": [
+        "-encoding", "UTF-8",
+        "-cp", "${workspaceFolder}/lib/gson-2.11.0.jar;${workspaceFolder}/lib/postgresql-42.7.13.jar",
+        "-sourcepath", "${workspaceFolder}/Backend/MS ENTRENAMIENTO/src",
+        "-d", "${workspaceFolder}/out/entrenamiento",
+        "${workspaceFolder}/Backend/MS ENTRENAMIENTO/src/com/gimnasio/entrenamiento/negocio/EntrenamientoServer.java"
+      ],
+      "problemMatcher": "$javac",
+      "group": "build"
+    },
+    {
+      "label": "Compilar Gateway",
+      "type": "process",
+      "command": "javac",
+      "args": [
+        "-encoding", "UTF-8",
+        "-sourcepath", "${workspaceFolder}/Backend/GATEWAY/src",
+        "-d", "${workspaceFolder}/out/gateway",
+        "${workspaceFolder}/Backend/GATEWAY/src/com/gimnasio/gateway/GatewayServer.java"
+      ],
+      "problemMatcher": "$javac",
+      "group": "build"
+    },
+    {
+      "label": "Compilar todo el Backend",
+      "dependsOn": ["Compilar Usuario", "Compilar Rutina", "Compilar Entrenamiento", "Compilar Gateway"],
+      "dependsOrder": "parallel",
+      "group": { "kind": "build", "isDefault": true },
+      "problemMatcher": []
+    }
+  ]
+}

@@ -1,0 +1,85 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "type": "java",
+      "name": "MS Usuario (8081)",
+      "request": "launch",
+      "mainClass": "com.gimnasio.usuario.negocio.UsuarioServer",
+      "classPaths": [
+        "${workspaceFolder}/out/usuario",
+        "${workspaceFolder}/lib/gson-2.11.0.jar",
+        "${workspaceFolder}/lib/postgresql-42.7.13.jar"
+      ],
+      "preLaunchTask": "Compilar Usuario",
+      "console": "integratedTerminal"
+    },
+    {
+      "type": "java",
+      "name": "MS Rutina (8082)",
+      "request": "launch",
+      "mainClass": "com.gimnasio.rutina.negocio.RutinaServer",
+      "classPaths": [
+        "${workspaceFolder}/out/rutina",
+        "${workspaceFolder}/lib/gson-2.11.0.jar",
+        "${workspaceFolder}/lib/postgresql-42.7.13.jar"
+      ],
+      "preLaunchTask": "Compilar Rutina",
+      "console": "integratedTerminal"
+    },
+    {
+      "type": "java",
+      "name": "MS Entrenamiento (8083)",
+      "request": "launch",
+      "mainClass": "com.gimnasio.entrenamiento.negocio.EntrenamientoServer",
+      "classPaths": [
+        "${workspaceFolder}/out/entrenamiento",
+        "${workspaceFolder}/lib/gson-2.11.0.jar",
+        "${workspaceFolder}/lib/postgresql-42.7.13.jar"
+      ],
+      "preLaunchTask": "Compilar Entrenamiento",
+      "console": "integratedTerminal"
+    },
+    {
+      "type": "java",
+      "name": "Gateway (9000)",
+      "request": "launch",
+      "mainClass": "com.gimnasio.gateway.GatewayServer",
+      "classPaths": [
+        "${workspaceFolder}/out/gateway"
+      ],
+      "preLaunchTask": "Compilar Gateway",
+      "console": "integratedTerminal"
+    },
+    {
+      "type": "node-terminal",
+      "name": "Frontend (5173)",
+      "request": "launch",
+      "command": "npm run dev",
+      "cwd": "${workspaceFolder}/Frontend"
+    }
+  ],
+  "compounds": [
+    {
+      "name": "TODO: Backend + Frontend",
+      "configurations": [
+        "MS Usuario (8081)",
+        "MS Rutina (8082)",
+        "MS Entrenamiento (8083)",
+        "Gateway (9000)",
+        "Frontend (5173)"
+      ],
+      "stopAll": true
+    },
+    {
+      "name": "Solo Backend",
+      "configurations": [
+        "MS Usuario (8081)",
+        "MS Rutina (8082)",
+        "MS Entrenamiento (8083)",
+        "Gateway (9000)"
+      ],
+      "stopAll": true
+    }
+  ]
+}
